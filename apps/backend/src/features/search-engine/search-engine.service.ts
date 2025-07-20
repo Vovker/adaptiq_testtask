@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import HttpClient from '../../utils/http-client';
-import { TVMazeSearchResult, SearchShowsResponse } from './search-engine.types';
+import { HttpClient, TVMazeSearchResult, ApiResponse } from '@adaptiq/core-types';
 
 @Injectable()
 export class SearchEngineService {
@@ -15,7 +14,7 @@ export class SearchEngineService {
     this.httpClient = new HttpClient(baseURL);
   }
 
-  async searchShows(query: string): Promise<SearchShowsResponse> {
+  async searchShows(query: string): Promise<ApiResponse<TVMazeSearchResult[]>> {
     try {
       const response = await this.httpClient.get<TVMazeSearchResult[]>('/search/shows', {
         params: { q: query },

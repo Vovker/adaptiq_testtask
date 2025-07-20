@@ -1,13 +1,13 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { SearchEngineService } from './search-engine.service';
-import { SearchShowsResponse } from './search-engine.types';
+import { ApiResponse, TVMazeSearchResult } from '@adaptiq/core-types';
 
 @Controller()
 export class SearchEngineController {
   constructor(private readonly searchEngineService: SearchEngineService) {}
 
   @Get('search-movies')
-  async searchMovies(@Query('q') query: string): Promise<SearchShowsResponse> {
+  async searchMovies(@Query('q') query: string): Promise<ApiResponse<TVMazeSearchResult[]>> {
     if (!query || query.trim() === '') {
       return {
         success: false,

@@ -79,12 +79,3 @@ export interface TVMazeLink {
   href: string;
   name?: string;
 }
-
-export interface SearchShowsResponse {
-  success: boolean;
-  data?: TVMazeSearchResult[];
-  error?: {
-    message: string;
-    statusCode: number;
-  };
-}

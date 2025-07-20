@@ -1,6 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-// THIS FILE IS BASIC SETUP FOR AN HTTP CLIENT USING AXIOS (WAS COPY-PASTED FROM ANOTHER PROJECT)
 export class HttpClient {
   private axiosInstance: AxiosInstance;
 
