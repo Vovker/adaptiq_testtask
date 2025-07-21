@@ -30,6 +30,8 @@ docker-compose up -d
 
 ```
 
+### The app should be available at `http://localhost:4173` by default
+
 # Alternative (local way)
 
 ### Install dependencies
