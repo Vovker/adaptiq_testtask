@@ -12,8 +12,23 @@ export const debouncedSearchQueryAtom = atom<string>('');
 export const isLoadingAtom = atom<boolean>(false);
 export const moviesDataAtom = atomWithReset<TVMazeSearchResult[]>([]);
 export const errorAtom = atomWithReset<string | null>(null);
+export const availableGenresAtom = atom<string[]>([]);
+export const selectedGenresAtom = atom<string[]>([]);
 
 export const hasSearchedAtom = atom<boolean>((get) => get(debouncedSearchQueryAtom).length > 0);
+
+export const filteredMoviesAtom = atom<TVMazeSearchResult[]>((get) => {
+  const moviesData = get(moviesDataAtom);
+  const selectedGenres = get(selectedGenresAtom);
+  
+  if (selectedGenres.length === 0) {
+    return moviesData;
+  }
+  
+  return moviesData.filter(movie => 
+    movie.show.genres.some(genre => selectedGenres.includes(genre))
+  );
+});
 
 export const fetchMoviesAtom = atom<null, [string], Promise<void>>(
   null,
@@ -38,7 +53,14 @@ export const fetchMoviesAtom = atom<null, [string], Promise<void>>(
       );
 
       if (response.data?.success) {
-        set(moviesDataAtom, response.data.data || []);
+        const data = response.data.data || [];
+        set(moviesDataAtom, data);
+
+        const genres = new Set<string>();
+        data.forEach(movie => {
+          movie.show.genres.forEach(genre => genres.add(genre));
+        });
+        set(availableGenresAtom, Array.from(genres));
       } else {
         const errorMessage = response.data?.error?.message || 'Failed to fetch movies';
         set(errorAtom, errorMessage);
