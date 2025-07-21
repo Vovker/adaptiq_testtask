@@ -40,13 +40,13 @@ pnpm install
 pnpm build
 
 # Run backend
-pnpm --filter @adaptiq/backend dev
+pnpm --filter backend dev
 # Or 
 cd apps/backend
 pnpm dev
 
 # Open another terminal and run frontend
-pnpm --filter @adaptiq/frontend dev
+pnpm --filter frontend dev
 # Or 
 cd apps/frontend
 pnpm dev
