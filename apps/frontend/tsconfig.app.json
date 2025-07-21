@@ -16,7 +16,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@core-types": ["../../packages/core-types/src/index.ts"]
+      "@adaptiq/core-types": ["../../packages/core-types/src/index.ts"]
     },
 
     /* Linting */

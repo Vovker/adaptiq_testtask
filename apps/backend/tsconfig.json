@@ -11,7 +11,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@core-types": ["../../packages/core-types/src/index.ts"]
+      "@adaptiq/core-types": ["../../packages/core-types/src/index.ts"]
     },
     "incremental": true,
     "skipLibCheck": true,

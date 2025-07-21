@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@core-types": "workspace:^",
+    "@adaptiq/core-types": "workspace:^",
     "@ant-design/icons": "^6.0.0",
     "antd": "^5.26.6",
     "debounce": "^2.2.0",

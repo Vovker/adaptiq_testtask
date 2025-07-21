@@ -20,7 +20,7 @@ importers:
 
   apps/backend:
     dependencies:
-      '@core-types':
+      '@adaptiq/core-types':
         specifier: workspace:*
         version: link:../../packages/core-types
       '@nestjs/common':
@@ -123,7 +123,7 @@ importers:
 
   apps/frontend:
     dependencies:
-      '@core-types':
+      '@adaptiq/core-types':
         specifier: workspace:^
         version: link:../../packages/core-types
       '@ant-design/icons':

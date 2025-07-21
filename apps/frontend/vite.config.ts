@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react(), svgr()],
   resolve: {
     alias: {
-      '@core-types': path.resolve(__dirname, '../../packages/core-types/src/index.ts')
+      '@adaptiq/core-types': path.resolve(__dirname, '../../packages/core-types/src/index.ts')
     }
   }
 })

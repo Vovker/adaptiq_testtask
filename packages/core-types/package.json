@@ -1,5 +1,5 @@
 {
-  "name": "@core-types",
+  "name": "@adaptiq/core-types",
   "version": "0.0.1",
   "description": "shared types and utilities",
   "main": "dist/index.js",

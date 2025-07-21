@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { HttpClient, TVMazeSearchResult, ApiResponse } from '@core-types';
+import { HttpClient, TVMazeSearchResult, ApiResponse } from '@adaptiq/core-types';
 
 @Injectable()
 export class SearchEngineService {
