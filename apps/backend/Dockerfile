@@ -42,4 +42,4 @@ WORKDIR /app/apps/backend
 
 EXPOSE 3000
 
-CMD ["node", "dist/main"]
+CMD ["node", "dist/apps/backend/src/main.js"]

@@ -1,6 +1,6 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { SearchEngineService } from './search-engine.service';
-import { ApiResponse, TVMazeSearchResult } from '@adaptiq/core-types';
+import { ApiResponse, TVMazeSearchResult } from '@core-types';
 
 @Controller()
 export class SearchEngineController {
